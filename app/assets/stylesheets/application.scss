@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+
+ * these are for the html5 template
+ *= require main.scss
  */
+
+
+.logo {
+	height: 100px;
+}

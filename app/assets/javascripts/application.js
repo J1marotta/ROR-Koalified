@@ -9,7 +9,20 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
+
+
+// The below requires are for the html5 template
+//= require jquery.min
+//= require jquery.scrollex.min
+//= require jquery.scrolly.min
+//= require skel
+
+//= require util
+//= require ie/html5shiv
+//= require ie/respond.min
+
+
+//= require main
