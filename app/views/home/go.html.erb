@@ -1,0 +1,29 @@
+<!-- Page Wrapper -->
+<div class="wrapper style3 special go">
+
+	<ul>
+
+		<% if user_signed_in? %>
+
+		<li>
+			<%= button_to("LEARN", root_url, method: :get, class: "Giant-button orange") %>
+		</li>
+
+		<li>
+			<%= button_to('Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }) %>
+		</li>
+		<li>
+			<%= button_to('Profile', user_registration_path) %>
+		</li>
+	<% else %>
+		<li>
+			<%= button_to('Login', new_user_session_path)  %>
+		</li>
+		<li>
+			<%= button_to "Register", new_user_registration_path%>
+		</li>
+		<% end %>
+
+	</ul>
+
+</div>
