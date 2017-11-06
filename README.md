@@ -15,7 +15,7 @@ Design Documentation
 Demonstrate your ability to break down the problem and design a solution.
 
 - 1 - One page summary of your application including problem definition, solution.
-* [Summary](https://docs.google.com/a/ait.nsw.edu.au/document/d/1Nm0xfJJnU8Bz-gg0w4dwaSMXK_kAl5f3IHyWzTyiUY4/edit?usp=sharing)
+* [Summary](https://docs.google.com/document/d/10j4bntSu_TVMSw3nLQZBkIEi8htvdvMnLu4BPICFaNM/edit?usp=sharing)
 
 
 - 2 - User stories for the whole application.
@@ -26,8 +26,32 @@ Demonstrate your ability to break down the problem and design a solution.
 
 
 
-Key Features to Implement:
+##### Key concept I know I want to include
 Fb or linkedin Login
+
+I personally much prefer to log in with Facebook, and as it adds quite a bit of trust to users if you get their Facebook account, because it's a good way to verify their identity.
+
+	STATUS : Failed to integrate
+
+###### _Lessons learned_
+After spending two days trying to integrate Facebook login, with Devise and Omniauth; I unfortunately had to pull the plug, as Time is a factor with this assignment.  I managed to successfully implement on localhost, but once I pushed to Heroku, it complicated matters as you have to change devise.rb and your facebook developer settings each time to swap between local and heroku, and in fact pushing to Heroku managed to break my local settings as well.
+
+---
+
+##### Key concept I know I want to include
+HTML 5 TEMPLATE :
+	I know that one of my weaknesses is design and front end css; My plan to mitigate this was to use a template from HTMLup.net
+
+		STATUS: Implemented
+
+###### _Lessons learned_
+After a full 6 hours trying to integrate this as the templates are not designed specifically for rails; I managed to locate a bug that was stopping the custom JS from running and essentially breaking the whole design.
+
+(For reference main.js was dependant on skel.js and it needed to be required inside the file.
+Additionally Font-awesome was being used, and it was erroring; This was solved with the font-awesome gem, Which I found very quickly compared to the several hours with the js errors )
+
+---
+
 Newsletter of latest jobs
 Updates on number of applications
 Email when an add is set to expire.
@@ -151,7 +175,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ##### HTML5UP template
 	This is a great resource, and I've included their readme inside the files as html5upreadme.md
 	[html5up.net](https://html5up.net/)
-	I can Acknowledge my weaknesses, and design is definitely one of them, using a template allows for quick proof of concept and faster prototyping. 
+	I can Acknowledge my weaknesses, and design is definitely one of them, using a template allows for quick proof of concept and faster prototyping.
 
 
 * Hat tip to anyone who's code was used
