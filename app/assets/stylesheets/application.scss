@@ -18,7 +18,18 @@
  *= require main.scss
  */
 
-
 .logo {
 	height: 100px;
+}
+
+
+.container {
+	margin-left: 5vw;
+	margin-right: 5vw;
+}
+
+
+.go {
+	height: 100vh;
+	background-color: purple;
 }

@@ -1,14 +1,41 @@
-<nav id="nav">
-	<ul>
-		<li class="special">
-			<a href="#menu" class="menuToggle"><span>Menu</span></a>
-			<div id="menu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Register</a></li>
-					<li><a href="elements.html">login</a></li>
-				</ul>
-			</div>
-		</li>
-	</ul>
-</nav>
+<!-- side menu -->
+
+
+<header id="header" class="alt">
+	<h1>
+		<a href="index.html">Koalified</a>
+	</h1>
+	<nav id="nav">
+		<ul>
+			<li class="special">
+				<a href="#menu" class="menuToggle">
+					<span>Menu</span>
+				</a>
+				<div id="menu">
+					<ul>
+
+						<li>
+							<h3><%= button_to("Home", root_url, method: :get) %>
+						</li>
+						<% if user_signed_in? %>
+							<li>
+							<%= button_to('Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }) %>
+							</li>
+							<li>
+							<%= button_to('Profile', user_registration_path) %>
+							</li>
+						<% else %>
+							<li>
+							<%= button_to('Login', new_user_session_path)  %>
+							</li>
+							<li>
+								<%= button_to "Register", new_user_registration_path%>
+							</li>
+						<% end %>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+	</header>
