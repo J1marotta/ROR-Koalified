@@ -1,4 +1,3 @@
-<!-- Page Wrapper -->
 <div class="wrapper style3 special go">
 
 	<ul>
@@ -16,13 +15,13 @@
 		</li>
 	<% else %>
 		<li>
-			<%= button_to('Login', new_user_session_path, method: :get, class: "Giant-button green") %>
+			<%= button_to('LOGIN', new_user_session_path, method: :get, class: "Giant-button green") %>
 		</li>
 		<li>
 			<%= button_to("PROFILE", root_url, method: :get, class: "Giant-button charcoal") %>
 		</li>
 		<li>
-			<%= button_to("Register", new_user_registration_path, method: :get, class: "Giant-button orange")  %>
+			<%= button_to("REGISTER", new_user_registration_path, method: :get, class: "Giant-button orange")  %>
 		</li>
 
 		<% end %>
