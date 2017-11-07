@@ -1,0 +1,57 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name, id: :profile_Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Driving_History_check_data %>
+    <%= form.text_area :Driving_History_check_data, id: :profile_Driving_History_check_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Police_check_data %>
+    <%= form.text_area :Police_check_data, id: :profile_Police_check_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio, id: :profile_bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Car %>
+    <%= form.text_area :Car, id: :profile_Car %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avatar_data %>
+    <%= form.text_area :avatar_data, id: :profile_avatar_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :User_id %>
+    <%= form.text_field :User_id, id: :profile_User_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_data %>
+    <%= form.text_area :license_data, id: :profile_license_data %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
