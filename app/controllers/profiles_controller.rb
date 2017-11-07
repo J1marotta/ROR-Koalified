@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-  
+
   end
 
 
@@ -75,13 +75,13 @@ class ProfilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       if params[:id]
-      # If there are params it is not the curent user
-      @profile = Profile.find_by(user_id: params[:id])
-    else
-      # Must be the owner if no params
-      @profile = Profile.find_by(user: current_user)
+        # If there are params it is not the curent user
+        @profile = Profile.find_by(user_id: params[:id])
+      else
+        # Must be the owner if no params
+        @profile = Profile.find_by(user: current_user)
+      end
     end
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params

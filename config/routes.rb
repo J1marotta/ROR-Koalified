@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #  resource vs recourses singular allows for just one profile and we tie it to the user id,
   #  if you use resources it adds profile/id/ for multiple users
   resource :profile
+  resources :profiles, only: [:show]
+
 
 
 end
