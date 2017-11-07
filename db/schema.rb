@@ -10,19 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107060136) do
+ActiveRecord::Schema.define(version: 20171107100016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "availabilities", force: :cascade do |t|
     t.string "day"
+    t.datetime "start_time"
     t.boolean "booked"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_time"
     t.index ["user_id"], name: "index_availabilities_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.text "driving_history_check_data"
+    t.text "police_check_data"
+    t.text "bio"
+    t.text "car"
+    t.text "avatar_data"
+    t.bigint "user_id"
+    t.text "license_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +57,5 @@ ActiveRecord::Schema.define(version: 20171107060136) do
   end
 
   add_foreign_key "availabilities", "users"
+  add_foreign_key "profiles", "users"
 end

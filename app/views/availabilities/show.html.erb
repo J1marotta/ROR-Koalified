@@ -3,12 +3,12 @@
 
 <p>
   <strong>Day:</strong>
-  <%= @availability.day %>
+  <%= @availability.day.to_date.strftime("%A, %b %d") %>
 </p>
 
 <p>
   <strong>Start Time</strong>
-  <%= @availability.start_time %>
+  <%= @availability.start_time.in_time_zone("Sydney").strftime(" %l %p")  %>
 </p>
 
 

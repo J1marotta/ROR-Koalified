@@ -19,10 +19,7 @@
 //= require jquery.scrollex.min
 //= require jquery.scrolly.min
 //= require skel
-
 //= require util
 //= require ie/html5shiv
 //= require ie/respond.min
-
-
 //= require main

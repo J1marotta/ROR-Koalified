@@ -63,6 +63,15 @@ class AvailabilitiesController < ApplicationController
   end
 
   private
+    # User time zones into database
+  def set_up
+
+
+  end
+
+
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_availability
       @availability = Availability.find(params[:id])

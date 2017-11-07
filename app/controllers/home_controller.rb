@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
-	def show
+	def go
 	end
+
+
+
+	def drive
+	end	
 end

@@ -5,5 +5,5 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :trackable, :validatable
 
         has_many :availabilities
-
+        has_one :profile
 end

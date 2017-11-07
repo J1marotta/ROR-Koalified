@@ -1,0 +1,31 @@
+<div id="page-wrapper">
+	<ul>
+		<!-- If the user is signed in let them access the go page   -->
+		<% if user_signed_in? %>
+
+		<li>
+			<%= button_to("AVAILABILITIES", availabilities_path, method: :get, class: "Giant-button orange") %>
+		</li>
+		<li>
+			<%= button_to("BOOKINGS", availabilities_path, method: :get, class: "Giant-button charcoal") %>
+		</li>
+
+	<% else %>
+
+
+	<!-- Not signed in they can login or goto register  -->
+		<li>
+			<%= button_to('LOGIN', new_user_session_path, method: :get, class: "Giant-button green") %>
+		</li>
+		<li>
+			<%= button_to("REGISTER", new_user_registration_path, method: :get, class: "Giant-button orange")  %>
+		</li>
+
+		<% end %>
+
+	</ul>
+
+</div>
+
+
+</div>
