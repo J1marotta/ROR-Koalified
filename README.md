@@ -5,9 +5,100 @@
 
 ### Coder Academy Ruby on Rails Final Project
 Due November 10th 2017
+(two week sprint)
 
 
-(pic of app)
+![Koalified](/public/pic.png)
+
+Peer to Peer driving Lessons
+
+
+_The marketplace for Time, as a Learner you can purchase one hour blocks of time which Drivers can post._
+
+---
+
+Peer to Peer Driving Lessons, Drivers can post their availabilities and learners can book up to a week in the future. Payment is done through the app and the driver gets a high % of the payment.
+
+
+
+## Getting Started
+
+it's live at
+[Koalified!](www.koalified2drive.herokuapp.com)
+
+
+### Prerequisites
+
+Gems used
+
+```
+# user authentication, devise
+gem 'devise'
+
+# Font-awesome
+gem "font-awesome-rails"
+```
+
+for testing
+
+```
+gem 'dotenv-rails'
+# rspec
+gem 'rspec-rails', '~> 3.6'
+
+```
+
+
+### Installing
+
+First you will need rails: version 5.1.4
+ruby version : ruby 2.4.1p111
+
+	```
+	git clone
+	cd koalified
+	bundle
+	```
+
+	then run rails server
+	```
+	rails s
+	```
+
+	and goto localhost:3000
+
+
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [html5up.net](http://www.html5up.net) - Great place for templates
+* [Rails](https://railsdocs.org/) - the place for rails info
+
+
 
 
 #Deliverables
@@ -50,6 +141,10 @@ After a full 6 hours trying to integrate this as the templates are not designed 
 (For reference main.js was dependant on skel.js and it needed to be required inside the file.
 Additionally Font-awesome was being used, and it was erroring; This was solved with the font-awesome gem, Which I found very quickly compared to the several hours with the js errors )
 
+Additionally further into development; I found that this proved to be a mistake, as it did not include bootstrap, and my css skills are sub-par at best. While my landing page looks swish, the rest of my app looks progressively worse and worse.
+
+
+
 ---
 
 ##### Key concept I know I want to include
@@ -59,14 +154,13 @@ Driver Posts Availability :
 		STATUS: Implemented
 
 ###### _Lessons learned_
-	Originally, I had used strings in the database for the the days of the week, and I also had quite a bit of problems, organising the information inside the database; I had my data stored as UTC, which took me a full day to convert to local time.  This was infuriating and the time would have been much better spend learning how to incorporate a JS date and time picker. My lack of JS skills definitely manifested in this scenario. What should have been a quite simple and easily Implemented widget.
+
+Originally, I had used strings in the database for the the days of the week, and I also had quite a bit of problems, organising the information inside the database; I had my data stored as UTC, which took me a full day to convert to local time.  This was infuriating and the time would have been much better spend learning how to incorporate a JS date and time picker. My lack of JS skills definitely manifested in this scenario. What should have been a quite simple and easily Implemented widget.
 
 ---
 
 
 
-
-_The marketplace is for Time, as a Learner you can purchase one hour blocks of time which Drivers can post._
 
 
 
@@ -87,88 +181,17 @@ Demonstrate Ruby on Rails development skills.
 - [ ] Your app will have some type of file uploading capability (eg. images).
 - [x] Your app will have authentication (eg. Devise, must have full functionality in place).
 - [x] Your app will have authorisation (users have restrictions on what they can see and edit).
-- [] Document your application with a README that explains how to setup, configure and use your application.
+- [ ] Document your application with a README that explains how to setup, configure and use your application.
 
 
 
 
 
 
-# Project Title
-
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-* **James Marotta** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **James Marotta** - *Initial work* - [j1marotta](https://github.com/j1marotta)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
