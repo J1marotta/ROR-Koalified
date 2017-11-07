@@ -14,9 +14,8 @@
 
 <div class="field">
 	<%= form.label :day %>
-	<%= form.select :day, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]%>
+	<%= form.select :day, [Date.today, Date.today+1.day, Date.today+2.day, Date.today+4.day, Date.today+5.days, Date.today+6.day, Date.today+7.day ]%>
 </div>
-
 
 
 <div class="field">

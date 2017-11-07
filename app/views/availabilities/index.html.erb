@@ -16,9 +16,9 @@
   <tbody>
     <% @availabilities.each do |availability| %>
       <tr>
-        <td><%= availability.day %></td>
+        <td><%= availability.day  %></td>
         <!-- Raw time conversion from UTC, to time zone then convert display   -->
-        <td><%= availability.start_time.in_time_zone("Sydney").strftime("%a, %m %b %l %p") %></td>
+        <td><%= availability.start_time.in_time_zone("Sydney").strftime(" %l %p") %></td>
         <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
         <td><%= link_to 'Delete this timeslot', availability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

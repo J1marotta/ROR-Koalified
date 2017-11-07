@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
 
   root to: 'home#index'
-  get '/go' => 'home#show'
+  get '/go' => 'home#go'
 end

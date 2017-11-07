@@ -23,8 +23,3 @@
 //= require ie/html5shiv
 //= require ie/respond.min
 //= require main
-
-// jquery ui plugin for the calender
-//= require pickadate/picker # required
-//= require pickadate/picker.date # for the date picker
-//= require pickadate/picker.time # for the time picker
