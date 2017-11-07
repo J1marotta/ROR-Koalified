@@ -11,8 +11,8 @@ gem 'devise'
 # Font-awesome
 gem "font-awesome-rails"
 
-
-
+# Pick a date gem
+gem 'pickadate-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

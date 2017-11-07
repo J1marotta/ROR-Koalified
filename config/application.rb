@@ -1,9 +1,6 @@
 require_relative 'boot'
 
 require 'rails/all'
-# 
-# config.time_zone = "Sydney"
-# config.active_record.default_timezone = :local # Or :utc
 
 
 
