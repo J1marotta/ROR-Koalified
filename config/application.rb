@@ -1,6 +1,11 @@
 require_relative 'boot'
 
 require 'rails/all'
+# 
+# config.time_zone = "Sydney"
+# config.active_record.default_timezone = :local # Or :utc
+
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,4 +21,7 @@ module Koalified
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += %W(#{config.root}/lib)
   end
+
+
+
 end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Availabilities</h1>
+<div class="table-wrapper">
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Start Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @availabilities.each do |availability| %>
+      <tr>
+        <td><%= availability.day %></td>
+        <td><%= availability.start_time.in_time_zone("Sydney").strftime("%a, %m %b %l %p") %></td>
+        <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
+        <td><%= link_to 'Delete this timeslot', availability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Availability', new_availability_path %>

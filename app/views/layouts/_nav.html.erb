@@ -29,7 +29,7 @@
 							<%= button_to('Login', new_user_session_path)  %>
 							</li>
 							<li>
-								<%= button_to "Register", new_user_registration_path%>
+								<%= button_to("Register", new_user_registration_url, method: :get) %>
 							</li>
 						<% end %>
 						</ul>

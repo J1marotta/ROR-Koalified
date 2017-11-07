@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-	def go
+	def show
 	end
 end
