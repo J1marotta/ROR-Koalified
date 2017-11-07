@@ -15,15 +15,28 @@
 					<ul>
 
 						<li>
+							<!--  If the user is signed in show options directly -->
 							<h3><%= button_to("Home", root_url, method: :get) %>
 						</li>
 						<% if user_signed_in? %>
+						<li>
+						<%= button_to('Profile', user_registration_path) %>
+						</li>
 							<li>
 							<%= button_to('Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }) %>
 							</li>
 							<li>
-							<%= button_to('Profile', user_registration_path) %>
+							<%= button_to("GO", go_path, method: :get) %>
 							</li>
+						<br/>
+						<br/>
+						<br/>
+						<br>
+							<li>
+							<%= button_to('Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }) %>
+							</li>
+
+							<!--Not signed in, show sign up or login  -->
 						<% else %>
 							<li>
 							<%= button_to('Login', new_user_session_path)  %>

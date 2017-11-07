@@ -16,7 +16,7 @@
   <tbody>
     <% @availabilities.each do |availability| %>
       <tr>
-        <td><%= availability.day  %></td>
+        <td><%= availability.day.to_date.strftime("%A, %b %d")  %></td>
         <!-- Raw time conversion from UTC, to time zone then convert display   -->
         <td><%= availability.start_time.in_time_zone("Sydney").strftime(" %l %p") %></td>
         <td><%= link_to 'Edit', edit_availability_path(availability) %></td>

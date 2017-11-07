@@ -52,18 +52,21 @@ Additionally Font-awesome was being used, and it was erroring; This was solved w
 
 ---
 
-Newsletter of latest jobs
-Updates on number of applications
-Email when an add is set to expire.
-Email when some one applies to a chore
-login to see past first page.
-login to apply for jobs
-post a job without tracking or login to allow tracking.
+##### Key concept I know I want to include
+Driver Posts Availability :
+	My design plan had Drivers, posting availabilities As a simple form, with 1 hour blocks.
+
+		STATUS: Implemented
+
+###### _Lessons learned_
+	Originally, I had used strings in the database for the the days of the week, and I also had quite a bit of problems, organising the information inside the database; I had my data stored as UTC, which took me a full day to convert to local time.  This was infuriating and the time would have been much better spend learning how to incorporate a JS date and time picker. My lack of JS skills definitely manifested in this scenario. What should have been a quite simple and easily Implemented widget.
+
+---
 
 
 
-The marketplace is for expertise, you could apply for a job working on rails, but also advertise a job for marketing or support.
 
+_The marketplace is for Time, as a Learner you can purchase one hour blocks of time which Drivers can post._
 
 
 
@@ -74,18 +77,17 @@ Demonstrate Ruby on Rails development skills.
 - [x] Create your application using Ruby on Rails.
 - [x]  Demonstrate knowledge of Rails conventions.
 - [x]  Use postgresql database in development.
-- [x] Use an API (eg. Omniauth, Geocoding, Maps, other..).
-- [ ] Use appropriate gems.
-- [ ] Use environmental variables to protect API keys etc. (dotenv)
+- [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..).
+- [x] Use appropriate gems.
+- [X] Use environmental variables to protect API keys etc. (dotenv used)
 - [ ] Implement a payment system for your product. (e.g. Stripe)
 - [ ] Your app must send transactional emails (eg. using Mailgun).
 - [ ] Your app should have an internal user messaging system.
 - [ ] Your app will have some type of searching, sorting and/or filtering capability.
 - [ ] Your app will have some type of file uploading capability (eg. images).
-- [ ] Your app will have authentication (eg. Devise, must have full functionality in place).
-- [ ] Your app will have authorisation (users have restrictions on what they can see and edit).
-- [ ] Your app will have an admin dashboard for the admin user to administrate the site. (not required)
-- [ ] Document your application with a README that explains how to setup, configure and use your application.
+- [x] Your app will have authentication (eg. Devise, must have full functionality in place).
+- [x] Your app will have authorisation (users have restrictions on what they can see and edit).
+- [] Document your application with a README that explains how to setup, configure and use your application.
 
 
 
