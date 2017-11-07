@@ -20,13 +20,13 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.Name %></td>
-        <td><%= profile.Driving_History_check_data %></td>
-        <td><%= profile.Police_check_data %></td>
+        <td><%= profile.name %></td>
+        <td><%= profile.driving_history_check_data %></td>
+        <td><%= profile.police_check_data %></td>
         <td><%= profile.bio %></td>
-        <td><%= profile.Car %></td>
+        <td><%= profile.car %></td>
         <td><%= profile.avatar_data %></td>
-        <td><%= profile.User %></td>
+        <td><%= profile.user %></td>
         <td><%= profile.license_data %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>

@@ -4,27 +4,28 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
   end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    # there either is a profile page
+  redirect_to edit_profile_url if @profile.nil?
+  # or there isn't
   end
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
   end
 
-  # GET /profiles/1/edit
-  def edit
-  end
+
 
   # POST /profiles
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
+
 
     respond_to do |format|
       if @profile.save
@@ -36,6 +37,14 @@ class ProfilesController < ApplicationController
       end
     end
   end
+
+  # GET /profiles/1/edit
+  def edit
+    # find the profile by the current user or create it if it doesn't exist... handy ruby built in function
+    @profile = Profile.find_or_initialize_by(user: current_user)
+
+  end
+
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
@@ -64,11 +73,17 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      if params[:id]
+      # If there are params it is not the curent user
+      @profile = Profile.find_by(user_id: params[:id])
+    else
+      # Must be the owner if no params
+      @profile = Profile.find_by(user: current_user)
     end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:Name, :Driving_History_check_data, :Police_check_data, :bio, :Car, :avatar_data, :User_id, :license_data)
+      params.require(:profile).permit(:name, :driving_history_check_data, :police_check_data, :bio, :car, :avatar_data, :user_id, :license_data)
     end
 end

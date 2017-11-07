@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe "profiles/show", type: :view do
   before(:each) do
     @profile = assign(:profile, Profile.create!(
-      :Name => "Name",
-      :Driving_History_check_data => "MyText",
-      :Police_check_data => "MyText",
+      :name => "Name",
+      :driving_history_check_data => "MyText",
+      :police_check_data => "MyText",
       :bio => "MyText",
-      :Car => "MyText",
+      :car => "MyText",
       :avatar_data => "MyText",
-      :User => nil,
+      :user => nil,
       :license_data => "MyText"
     ))
   end
