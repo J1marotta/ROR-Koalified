@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  day: MyString
+  length: 2017-11-07 11:50:31
+  booked: false
+  user: one
+
+two:
+  price: 1
+  day: MyString
+  length: 2017-11-07 11:50:31
+  booked: false
+  user: two
