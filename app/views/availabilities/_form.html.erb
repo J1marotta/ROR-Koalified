@@ -1,42 +1,28 @@
 <%= form_with(model: availability, local: true) do |form| %>
-  <% if availability.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
+<% if availability.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(availability.errors.count, "error") %>
+		prohibited this availability from being saved:</h2>
 
-      <ul>
-      <% availability.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% availability.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, id: :availability_price %>
-  </div>
+<div class="field">
+	<%= form.label :day %>
+	<%= form.select :day, ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]%>
+</div>
 
-  <div class="field">
-    <%= form.label :day %>
-    <%= form.text_field :day, id: :availability_day %>
-  </div>
+<div class="field">
+	<%= form.label :length %>
+	<%= form.time_select :length, id: :availability_length %>
+</div>
 
-  <div class="field">
-    <%= form.label :length %>
-    <%= form.time_select :length, id: :availability_length %>
-  </div>
-
-  <div class="field">
-    <%= form.label :booked %>
-    <%= form.check_box :booked, id: :availability_booked %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :availability_user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+	<%= form.submit %>
+</div>
 <% end %>

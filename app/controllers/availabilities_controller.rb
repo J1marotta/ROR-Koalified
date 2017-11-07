@@ -4,7 +4,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities
   # GET /availabilities.json
   def index
-    @availabilities = Availability.all
+    @availabilities = Availability.order("created_at desc")
   end
 
   # GET /availabilities/1
@@ -25,6 +25,7 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities.json
   def create
     @availability = Availability.new(availability_params)
+    @availability.user = current_user
 
     respond_to do |format|
       if @availability.save
