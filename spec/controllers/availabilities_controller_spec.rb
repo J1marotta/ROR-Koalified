@@ -42,6 +42,10 @@ RSpec.describe AvailabilitiesController, type: :controller do
   # AvailabilitiesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+
+
+
+
   describe "GET #index" do
     it "returns a success response" do
       availability = Availability.create! valid_attributes

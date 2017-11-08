@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get '/go' => 'home#go'
   get '/drive' => 'home#drive'
   get '/adverts' => 'availabilities#adverts'
+  resources :charges
 
 end

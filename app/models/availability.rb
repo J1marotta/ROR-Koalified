@@ -3,7 +3,7 @@ class Availability < ApplicationRecord
 
   # very ugly sql search function
   def self.search(search)
-    where('day ILIKE ?', "%#{search}%")
+    where('day LIKE ?', "%#{search}%")
   end
 
 
