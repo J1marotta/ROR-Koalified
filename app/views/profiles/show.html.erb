@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<p class:"avatar">
+  <strong>Avatar</strong>
+  <img src='<%=@profile.avatar_url  %>'>
+</p>
+
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
@@ -23,16 +28,6 @@
 <p>
   <strong>Car:</strong>
   <%= @profile.car %>
-</p>
-
-<p>
-  <strong>Avatar data:</strong>
-  <%= @profile.avatar_data %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
 </p>
 
 <p>
