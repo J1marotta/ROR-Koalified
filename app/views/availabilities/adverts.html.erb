@@ -1,0 +1,60 @@
+<div class="page-wrapper 50% rounded charcoal">
+	<box class="container">
+
+		<!--Search box -->
+		<%= form_tag(adverts_path, :method => "get") do %>
+		<br><%= text_field_tag :search, params[:search], placeholder: "Choose a Day"%></br>
+		<br><%= submit_tag "Search", class: 'btn' %></br>
+		<% end %>
+	</box>
+	<hr>
+	<br>
+	<br>
+	<div class="row uniform 100% ">
+		<div class="grid">
+			<% @availabilities.each do |a| %>
+
+			<div class="box rounded">
+				<div class="bit name">
+					<%= a.user.profile.name %>
+				</div>
+				<div class="bit time">
+					<%= a.day.to_date.strftime("%A, %b %d") %>
+					to
+					<%= a.start_time.strftime(" %l %p")  %>
+				</div>
+				<div class="bit messages">
+					<!-- Button to make offer -->
+					<%= button_to "Profile" %>
+				</div>
+				<div class="bit bottom">
+					<!-- Button to chat -->
+					<%= button_to "Send Message" %>
+					<!--Charge via stripe  -->
+					<div class="stripe">
+
+						<%= form_tag charges_path do %>
+						<article>
+							<% if flash[:error].present? %>
+							<div id="error_explanation">
+								<p><%= flash[:error] %></p>
+							</div>
+							<% end %>
+						</article>
+
+						<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="A month's subscription" data-amount="500" data-locale="auto"></script>
+						<label class="amount">
+							<span>Amount: $45.00</span>
+						</label>
+						<% end %>
+
+					</div>
+				</div>
+
+			</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>

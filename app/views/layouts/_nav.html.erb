@@ -20,11 +20,8 @@
 						</li>
 						<% if user_signed_in? %>
 						<li>
-						<%= button_to('Profile', user_registration_path) %>
+						<%= button_to('Profile', profile_path, method: :get) %>
 						</li>
-							<li>
-							<%= button_to('Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }) %>
-							</li>
 							<li>
 							<%= button_to("GO", go_path, method: :get) %>
 							</li>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :bookings
+  devise_for :users , controllers: { registrations: "registrations" }
   root to: 'home#index'
-  devise_for :users
 
   resources :availabilities
 
@@ -9,10 +11,11 @@ Rails.application.routes.draw do
   #  resource vs recourses singular allows for just one profile and we tie it to the user id,
   #  if you use resources it adds profile/id/ for multiple users
   resource :profile
-  resources :profiles, only: [:show]
 
   # Home controller to handle in between routes
   get '/go' => 'home#go'
   get '/drive' => 'home#drive'
+  get '/adverts' => 'availabilities#adverts'
+  resources :charges
 
 end

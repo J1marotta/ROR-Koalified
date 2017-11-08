@@ -21,7 +21,7 @@ class AvailabilitiesController < ApplicationController
   def edit
   end
 
-  # POST /availabilities
+    # POST /availabilities
   # POST /availabilities.json
   def create
     @availability = Availability.new(availability_params)
@@ -62,14 +62,19 @@ class AvailabilitiesController < ApplicationController
     end
   end
 
-  private
-    # User time zones into database
-  def set_up
+  def adverts
+    # Don't set the before action because the page sets it self.
+    @availabilities = Availability.all
 
-
+    # adding conditions to find availability if given search params
+    @availabilities = if params[:search]
+      Availability.search(params[:search]).order('created_at DESC')
+    else
+      Availability.all
+    end
   end
 
-
+  private
 
 
     # Use callbacks to share common setup or constraints between actions.

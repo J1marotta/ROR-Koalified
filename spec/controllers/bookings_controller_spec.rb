@@ -23,13 +23,12 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe AvailabilitiesController, type: :controller do
+RSpec.describe BookingsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Availability. As you add validations to Availability, be sure to
+  # Booking. As you add validations to Booking, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-
     skip("Add a hash of attributes valid for your model")
   }
 
@@ -39,16 +38,12 @@ RSpec.describe AvailabilitiesController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # AvailabilitiesController. Be sure to keep this updated too.
+  # BookingsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-
-
-
-
 
   describe "GET #index" do
     it "returns a success response" do
-      availability = Availability.create! valid_attributes
+      booking = Booking.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -56,8 +51,8 @@ RSpec.describe AvailabilitiesController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      availability = Availability.create! valid_attributes
-      get :show, params: {id: availability.to_param}, session: valid_session
+      booking = Booking.create! valid_attributes
+      get :show, params: {id: booking.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -71,29 +66,29 @@ RSpec.describe AvailabilitiesController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      availability = Availability.create! valid_attributes
-      get :edit, params: {id: availability.to_param}, session: valid_session
+      booking = Booking.create! valid_attributes
+      get :edit, params: {id: booking.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Availability" do
+      it "creates a new Booking" do
         expect {
-          post :create, params: {availability: valid_attributes}, session: valid_session
-        }.to change(Availability, :count).by(1)
+          post :create, params: {booking: valid_attributes}, session: valid_session
+        }.to change(Booking, :count).by(1)
       end
 
-      it "redirects to the created availability" do
-        post :create, params: {availability: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Availability.last)
+      it "redirects to the created booking" do
+        post :create, params: {booking: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Booking.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {availability: invalid_attributes}, session: valid_session
+        post :create, params: {booking: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
@@ -105,41 +100,41 @@ RSpec.describe AvailabilitiesController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested availability" do
-        availability = Availability.create! valid_attributes
-        put :update, params: {id: availability.to_param, availability: new_attributes}, session: valid_session
-        availability.reload
+      it "updates the requested booking" do
+        booking = Booking.create! valid_attributes
+        put :update, params: {id: booking.to_param, booking: new_attributes}, session: valid_session
+        booking.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the availability" do
-        availability = Availability.create! valid_attributes
-        put :update, params: {id: availability.to_param, availability: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(availability)
+      it "redirects to the booking" do
+        booking = Booking.create! valid_attributes
+        put :update, params: {id: booking.to_param, booking: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(booking)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        availability = Availability.create! valid_attributes
-        put :update, params: {id: availability.to_param, availability: invalid_attributes}, session: valid_session
+        booking = Booking.create! valid_attributes
+        put :update, params: {id: booking.to_param, booking: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested availability" do
-      availability = Availability.create! valid_attributes
+    it "destroys the requested booking" do
+      booking = Booking.create! valid_attributes
       expect {
-        delete :destroy, params: {id: availability.to_param}, session: valid_session
-      }.to change(Availability, :count).by(-1)
+        delete :destroy, params: {id: booking.to_param}, session: valid_session
+      }.to change(Booking, :count).by(-1)
     end
 
-    it "redirects to the availabilities list" do
-      availability = Availability.create! valid_attributes
-      delete :destroy, params: {id: availability.to_param}, session: valid_session
-      expect(response).to redirect_to(availabilities_url)
+    it "redirects to the bookings list" do
+      booking = Booking.create! valid_attributes
+      delete :destroy, params: {id: booking.to_param}, session: valid_session
+      expect(response).to redirect_to(bookings_url)
     end
   end
 

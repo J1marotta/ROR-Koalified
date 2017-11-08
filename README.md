@@ -24,6 +24,11 @@ Peer to Peer Driving Lessons, Drivers can post their availabilities and learners
 
 it's live at
 [Koalified!](www.koalified2drive.herokuapp.com)
+You can sign up for a profile, upload an avatar and your license data,
+and then you can post your availabilities;
+
+Learner drivers can sign up and select automated ads from available drivers; and contact them or make a booking.
+
 
 
 ### Prerequisites
@@ -36,6 +41,12 @@ gem 'devise'
 
 # Font-awesome
 gem "font-awesome-rails"
+
+# shrine gem for file uploading
+gem "shrine"
+
+# cloudinary gem
+gem "shrine-cloudinary"
 ```
 
 for testing
@@ -95,7 +106,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [html5up.net](http://www.html5up.net) - Great place for templates
-* [Rails](https://railsdocs.org/) - the place for rails info
+* [RailsGuides](http://guides.rubyonrails.org/) - the place for rails info
 
 
 
