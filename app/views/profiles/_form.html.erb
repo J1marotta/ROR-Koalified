@@ -12,44 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    Full Name
     <%= form.text_field :name, id: :profile_name %>
   </div>
 
   <div class="field">
-    <%= form.label :driving_history_check_data %>
-    <%= form.text_area :driving_history_check_data, id: :profile_driving_history_check_data %>
+    Upload a Picture
+    <%= form.file_field :avatar, id: :profile_avatar_data %>
   </div>
 
-  <div class="field">
-    <%= form.label :police_check_data %>
-    <%= form.text_area :police_check_data, id: :profile_police_check_data %>
-  </div>
+
 
   <div class="field">
+    Upload your license
+      <%= form.file_field :license_data, id: :profile_license_data %>
+  </div>
+
+
+  <div class="field">
+    Give us some details about yourself.
     <%= form.label :bio %>
     <%= form.text_area :bio, id: :profile_bio %>
   </div>
 
   <div class="field">
+    Give us some details about your car, what year is it? Manual or Auto?
     <%= form.label :car %>
     <%= form.text_area :car, id: :profile_car %>
   </div>
 
-  <div class="field">
-    <%= form.label :Avatar %>
-    <%= form.file_field :avatar, id: :profile_avatar_data %>
-  </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :profile_user_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :license_data %>
-    <%= form.text_area :license_data, id: :profile_license_data %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
