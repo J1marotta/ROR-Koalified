@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :bookings
   devise_for :users , controllers: { registrations: "registrations" }
   root to: 'home#index'
 
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
   # Home controller to handle in between routes
   get '/go' => 'home#go'
   get '/drive' => 'home#drive'
+  get '/adverts' => 'availabilities#adverts'
 
 end

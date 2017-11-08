@@ -1,0 +1,25 @@
+<div class="page-wrapper orange rounded">
+	<box class= "box alt">
+
+		<!--Search box -->
+			<%= form_tag(adverts_path, :method => "get") do %>
+			<br><%= text_field_tag :search, params[:search], placeholder: "Choose a Day"%></br>
+			<br><%= submit_tag "Search", class: 'btn' %></br>
+			<% end %>
+
+
+		<div class="row uniform 50%">
+					<% @availabilities.each do |a| %>
+			<div class="4u">
+				<div class="card charcoal">
+					<% a.user.profile  %>
+					<% a.day %>
+				</div>
+
+				<% end %>
+			</div>
+		</div>
+
+
+
+</div>
