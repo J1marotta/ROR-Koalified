@@ -1,44 +1,50 @@
+<div class="page-wrapper">
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+<div class="field">
+  <p>
+    <strong>Name:</strong>
+    <%= @profile.name %>
+  </p>
+</div>
 
-<p>
-  <strong>Driving history check data:</strong>
-  <%= @profile.driving_history_check_data %>
-</p>
 
-<p>
-  <strong>Police check data:</strong>
-  <%= @profile.police_check_data %>
-</p>
+<div class="field">
+  <p class:"avatar">
+    <strong>Avatar</strong>
+    <img src='<%=@profile.avatar_url  %>'>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
+  <p>
+    <strong>License:</strong>
+    <img src='<%=@profile.license_url  %>'>
+  </p>
+</div>
 
-<p>
-  <strong>Car:</strong>
-  <%= @profile.car %>
-</p>
 
-<p>
-  <strong>Avatar data:</strong>
-  <%= @profile.avatar_data %>
-</p>
+<div class="field">
+  <p>
+    <strong>Driving history and Police check</strong>
+    "coming Soon"
+  </p>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+<div class="field">
+  <p>
+    <strong>Bio:</strong>
+    <%= @profile.bio %>
+  </p>
+</div>
 
-<p>
-  <strong>License data:</strong>
-  <%= @profile.license_data %>
-</p>
+<div class="field">
+  <p>
+    <strong>Car:</strong>
+    <%= @profile.car %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profile_path %>
+</div>

@@ -2,12 +2,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :users
 
-
-  # Home controller to handle in between routes
-  get '/go' => 'home#go'
-  get '/drive' => 'home#drive'
-
-
   resources :availabilities
 
   # resource for profiles this only allows the current user to get to a profile and edit, if you're not signed in you can only view
@@ -17,6 +11,8 @@ Rails.application.routes.draw do
   resource :profile
   resources :profiles, only: [:show]
 
-
+  # Home controller to handle in between routes
+  get '/go' => 'home#go'
+  get '/drive' => 'home#drive'
 
 end
