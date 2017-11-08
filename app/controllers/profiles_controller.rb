@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :new, :create]
 
   # GET /profiles
   # GET /profiles.json
@@ -10,13 +10,13 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     # there either is a profile page
-    redirect_to edit_profile_url if @profile.nil?
+    # redirect_to edit_profile_path if @profile.nil?
     # or there isn't
   end
 
   # GET /profiles/new
   def new
-
+    @profile = Profile.new
   end
 
 
