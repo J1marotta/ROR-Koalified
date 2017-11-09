@@ -11,35 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    Full Name
-    <%= form.text_field :name, id: :profile_name %>
+<!--  css grid  -->
+  <div class="profile-grid">
+
+    <!-- left side box -->
+    <div class="profile-box-left">
+        <div class="field">
+          Full Name
+          <%= form.text_field :name, id: :profile_name %>
+        </div>
+
+        <div class="field">
+          Give us some details about yourself.
+          <%= form.label :bio %>
+          <%= form.text_area :bio, id: :profile_bio %>
+        </div>
+
+        <div class="field">
+          Give us some details about your car, what year is it? Manual or Auto?
+          <%= form.label :car %>
+          <%= form.text_area :car, id: :profile_car %>
+        </div>
+
+
+    </div>
+
+
+    <!--right sided box  -->
+    <div class="profile-box-right">
+        <div class="field">
+          Upload a Picture
+          <%= form.file_field :avatar, id: :profile_avatar_data %>
+        </div>
+
+        <div class="field">
+          Upload your license
+            <%= form.file_field :license, id: :profile_license_data %>
+        </div>
+
+
+    </div>
+
+
   </div>
 
-  <div class="field">
-    Upload a Picture
-    <%= form.file_field :avatar, id: :profile_avatar_data %>
-  </div>
 
 
-
-  <div class="field">
-    Upload your license
-      <%= form.file_field :license, id: :profile_license_data %>
-  </div>
-
-
-  <div class="field">
-    Give us some details about yourself.
-    <%= form.label :bio %>
-    <%= form.text_area :bio, id: :profile_bio %>
-  </div>
-
-  <div class="field">
-    Give us some details about your car, what year is it? Manual or Auto?
-    <%= form.label :car %>
-    <%= form.text_area :car, id: :profile_car %>
-  </div>
 
 
 

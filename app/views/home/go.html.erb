@@ -1,34 +1,38 @@
 <div class="page-wrapper">
 
-	<div class="wrapper style3 special go rounded ">
 
-		<ul>
-			<!-- If the user is signed in let them access the go page   -->
-			<% if user_signed_in? %>
+		<div class="go-grid">
+			<div class="go-box">
+				<ul>
+					<!-- If the user is signed in let them access the go page   -->
+					<% if user_signed_in? %>
 
-			<li>
-				<%= button_to("LEARN ", adverts_url, method: :get, class: "Giant-button orange") %>
-			</li>
-			<li>
-				<%= button_to("DRIVE ", drive_path, method: :get, class: "Giant-button charcoal") %>
-			</li>
-			<li>
-				<%= button_to("PROFILE", profile_path, method: :get, class: "Giant-button green") %>
-			</li>
+					<li>
+						<%= button_to("LEARN ", adverts_url, method: :get, class: "Giant-button orange") %>
+					</li>
+					<li>
+						<%= button_to("DRIVE ", drive_path, method: :get, class: "Giant-button charcoal") %>
+					</li>
+					<li>
+						<%= button_to("PROFILE", profile_path, method: :get, class: "Giant-button green") %>
+					</li>
 
-		<% else %>
+				<% else %>
 
-			<!-- Not signed in they can login or goto register  -->
-			<li>
-				<%= button_to('LOGIN', new_user_session_path, method: :get, class: "Giant-button green") %>
-			</li>
-			<li>
-				<%= button_to("REGISTER", new_user_registration_path, method: :get, class: "Giant-button orange")  %>
-			</li>
+					<!-- Not signed in they can login or goto register  -->
+					<li>
+						<%= button_to('LOGIN', new_user_session_path, method: :get, class: "Giant-button green") %>
+					</li>
+					<li>
+						<%= button_to("REGISTER", new_user_registration_path, method: :get, class: "Giant-button orange")  %>
+					</li>
 
-			<% end %>
+					<% end %>
 
-		</ul>
+				</ul>
+			</div>
+		</div>
 
-	</div>
+
+
 </div>

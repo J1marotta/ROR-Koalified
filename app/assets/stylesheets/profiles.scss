@@ -8,3 +8,31 @@
 	border-radius: 50%;
 	max-height: 10vh;
 }
+
+.profile-grid {
+	// border:3px green solid;
+	display: grid;
+	grid-template-columns: repeat(2,45%);
+	grid-gap: 30px;
+	justify-content: center;
+	align-content:center;
+}
+
+.profile-box-left{
+	// border: 2px blue solid;
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	justify-content:start;
+	align-content:center;
+}
+
+.profile-box-right {
+	// border: 2px solid red;
+	display:grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	align-content:center;
+	align-self: end;
+	justify-self: center;
+}

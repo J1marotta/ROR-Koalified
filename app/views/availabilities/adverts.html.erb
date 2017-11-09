@@ -1,60 +1,86 @@
-<div class="page-wrapper 50% rounded charcoal">
-	<box class="container">
+<div class="page-wrapper rounded charcoal">
+	<div class="grid-top">
 
-		<!--Search box -->
-		<%= form_tag(adverts_path, :method => "get") do %>
-		<br><%= text_field_tag :search, params[:search], placeholder: "Choose a Day"%></br>
-		<br><%= submit_tag "Search", class: 'btn' %></br>
-		<% end %>
-	</box>
+		<div class="search-box">
+
+			<!--Search box -->
+			<%= form_tag(adverts_path, :method => "get") do %>
+			<br><%= text_field_tag :search, params[:search], placeholder: "Choose a Date"%></br>
+			<!--actual button  -->
+			<div class="ssbutton">
+				<br><%= submit_tag "Search", class: 'btn' %></br>
+			</div>
+			<% end %>
+		</div>
+		<div class="search-box">
+			Here you can See and select from our available drivers, and make a booking.
+		</div>
+
+	</div>
+
 	<hr>
 	<br>
 	<br>
-	<div class="row uniform 100% ">
-		<div class="grid">
-			<% @availabilities.each do |a| %>
-
-			<div class="box rounded">
-				<div class="bit name">
-					<%= a.user.profile.name %>
-				</div>
-				<div class="bit time">
-					<%= a.day.to_date.strftime("%A, %b %d") %>
-					to
-					<%= a.start_time.strftime(" %l %p")  %>
-				</div>
-				<div class="bit messages">
-					<!-- Button to make offer -->
-					<%= button_to "Profile" %>
-				</div>
-				<div class="bit bottom">
-					<!-- Button to chat -->
-					<%= button_to "Send Message" %>
-					<!--Charge via stripe  -->
-					<div class="stripe">
-
-						<%= form_tag charges_path do %>
-						<article>
-							<% if flash[:error].present? %>
-							<div id="error_explanation">
-								<p><%= flash[:error] %></p>
-							</div>
-							<% end %>
-						</article>
-
-						<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="A month's subscription" data-amount="4500" data-locale="auto"></script>
-						<label class="amount">
-							<span>Amount: $45.00</span>
-						</label>
-						<% end %>
-
-					</div>
-				</div>
-
-			</div>
-
-			<% end %>
+	<!-- start of results in css grid -->
+	<div class="grid">
+		<% @availabilities.each do |a| %>
+		<div class="spacer">
 
 		</div>
+		<!-- Each box -->
+		<div class="box">
+
+			<!-- has a name -->
+				DRIVER:
+				<%= a.user.profile.name %>
+
+
+			<!-- has a time spot -->
+			<div class="bit time">
+				TIME:
+				<%= a.day.to_date.strftime("%A, %b %d") %>
+				at:
+				<%= a.start_time.strftime(" %l %p")  %>
+			</div>
+
+			<!--section for profile  -->
+			<div class="bit profile">
+				<%= button_to "Profile" %>
+			</div>
+
+			<!-- bottom section has two buttons -->
+			<div class="bit ">
+
+				<!--send message   -->
+				<%= button_to "Send Message" %>
+
+				<!--Charge via stripe  -->
+				<div class="stripe">
+
+					<%= form_tag charges_path do %>
+					<article>
+						<% if flash[:error].present? %>
+						<div id="error_explanation">
+							<p><%= flash[:error] %></p>
+						</div>
+						<% end %>
+					</article>
+
+					<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="A month's subscription" data-amount="4500" data-locale="auto"></script>
+					<label class="amount">
+						<span>Amount: $45.00</span>
+					</label>
+					<% end %>
+
+				</div>
+			</div>
+
+		</div>
+
+		<% end %>
+		<div class="spacer">
+
+		</div>
+
 	</div>
 </div>

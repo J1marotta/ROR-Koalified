@@ -177,6 +177,10 @@ Driver Posts Availability :
 
 Originally, I had used strings in the database for the the days of the week, and I also had quite a bit of problems, organising the information inside the database; I had my data stored as UTC, which took me a full day to convert to local time.  This was infuriating and the time would have been much better spend learning how to incorporate a JS date and time picker. My lack of JS skills definitely manifested in this scenario. What should have been a quite simple and easily Implemented widget.
 
+
+Eventually I made this work, By making availabilities only created by the current user, rendered when posting new availabilities, and all availabilities posted when searching for a booking.
+
+The next step is to trigger the booking boolean once the booking is confirmed and paid. and to remove it from the adverts view.
 ---
 
 
