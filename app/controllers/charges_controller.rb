@@ -1,37 +1,29 @@
 class ChargesController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
 
-	def new
-	end
+  def new; end
 
-def create
-  # Amount in cents
-  @amount = 4500
+  def create
+    # Amount in cents
+    @amount = 4500
 
-  customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
-  )
+    customer = Stripe::Customer.create(
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
+    )
 
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Book this Availability',
-    :currency    => 'AUD'
-  )
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: @amount,
+      description: 'Book this Availability',
+      currency: 'AUD'
+    )
 
-	redirect_to thanks_path
+    redirect_to thanks_path
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
+    end
 
-
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
-	  redirect_to new_charge_path
-	end
-
-
-	def thanks
-	end
-
-
-
+  def thanks; end
 end

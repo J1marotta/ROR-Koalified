@@ -56,6 +56,9 @@ gem 'dotenv-rails'
 # rspec
 gem 'rspec-rails', '~> 3.6'
 
+# rubocop
+gem 'rubocop', '~> 0.51.0', require: false
+
 ```
 
 
@@ -81,7 +84,9 @@ ruby version : ruby 2.4.1p111
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+
+
+
 
 ### Break down into end to end tests
 
@@ -91,13 +96,18 @@ Explain what these tests test and why
 Give an example
 ```
 
-### And coding style tests
+### Coding Style Tests
 
-Explain what these tests test and why
+
+To run rubocop
 
 ```
-Give an example
+$ rubocop
 ```
+
+it inherits from .rubocop_todo.yml and you can adjust the test slightly in there.
+
+
 
 ## Deployment
 

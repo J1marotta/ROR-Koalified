@@ -5,6 +5,4 @@ class Availability < ApplicationRecord
   def self.search(search)
     where('day LIKE ?', "%#{search}%")
   end
-
-
 end

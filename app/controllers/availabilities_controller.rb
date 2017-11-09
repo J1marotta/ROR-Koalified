@@ -1,17 +1,16 @@
 class AvailabilitiesController < ApplicationController
-  before_action :set_availability, only: [:show, :edit, :update, :destroy]
+  before_action :set_availability, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /availabilities
   # GET /availabilities.json
   def index
-    @availabilities = Availability.order("created_at desc")
+    @availabilities = Availability.order('created_at desc')
   end
 
   # GET /availabilities/1
   # GET /availabilities/1.json
-  def show
-  end
+  def show; end
 
   # GET /availabilities/new
   def new
@@ -19,10 +18,9 @@ class AvailabilitiesController < ApplicationController
   end
 
   # GET /availabilities/1/edit
-  def edit
-  end
+  def edit; end
 
-    # POST /availabilities
+  # POST /availabilities
   # POST /availabilities.json
   def create
     @availability = Availability.new(availability_params)
@@ -69,22 +67,21 @@ class AvailabilitiesController < ApplicationController
 
     # adding conditions to find availability if given search params
     @availabilities = if params[:search]
-      Availability.search(params[:search]).order('created_at DESC')
-    else
-      Availability.all
+                        Availability.search(params[:search]).order('created_at DESC')
+                      else
+                        Availability.all
     end
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_availability
+    @availability = Availability.find(params[:id])
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_availability
-      @availability = Availability.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def availability_params
-      params.require(:availability).permit(:price, :day, :start_time, :booked, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def availability_params
+    params.require(:availability).permit(:price, :day, :start_time, :booked, :user_id)
+  end
 end

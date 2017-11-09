@@ -17,13 +17,18 @@
 
       <div class="field">
 
+
 			<p>
-				<strong>Driving history and Police check</strong>
-				"coming Soon"
+					<strong>Postcode:</strong>
+			</p>
+			<p>
+				<%= @profile.postcode %>
+			</p>
 			</p>
     </div>
 
       	<div class="field">
+					<!--bio  -->
       		<p>
       			<strong>Bio:</strong>
           </p>
@@ -33,6 +38,8 @@
       	</div>
 
       	<div class="field">
+
+					<!--car info  -->
       		<p>
       			<strong>Car:</strong>
           </p>
@@ -41,11 +48,9 @@
       		</p>
       	</div>
 
-				<div class="field">
-					Sign up now to get paid
-					<a  class="white" href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_BjHuFmrEKXcxfPWEGG7eFkFienrbbAs5&scope=read_write"> "Stripe connect"</a>
-
-				</div>
+				<%= link_to 'Edit', edit_profile_path(@profile), class: "none" %>
+				|
+				<%= link_to 'Back', profile_path, class: "none" %>
 
 		</div>
 
@@ -74,7 +79,5 @@
 
 
 
-	<%= link_to 'Edit', edit_profile_path(@profile) %>
-	|
-	<%= link_to 'Back', profile_path %>
+
 </div>

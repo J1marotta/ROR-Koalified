@@ -22,6 +22,13 @@
         </div>
 
         <div class="field">
+          Whats your postcode
+          <%= form.text_field :postcode, id: :postcode %>
+        </div>
+
+
+
+        <div class="field">
           Give us some details about yourself.
           <%= form.label :bio %>
           <%= form.text_area :bio, id: :profile_bio %>

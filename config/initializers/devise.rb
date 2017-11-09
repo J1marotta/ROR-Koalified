@@ -274,14 +274,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-
-  # Omni auth  for stripe
-  config.omniauth :stripe_connect,
-     ENV['STRIPE_CONNECT_CLIENT_ID'],
-     ENV['STRIPE_SECRET_KEY'],
-     :scope => 'read_write',
-     :stripe_landing => 'register'
-
-
+  # Omni auth  for stripe (removed)
 
 end
