@@ -205,17 +205,20 @@ Demonstrate Ruby on Rails development skills.
 - [x] Create your application using Ruby on Rails.
 - [x]  Demonstrate knowledge of Rails conventions.
 - [x]  Use postgresql database in development.
-- [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..).
 - [x] Use appropriate gems.
 - [X] Use environmental variables to protect API keys etc. (dotenv used)
 - [x] Implement a payment system for your product. (e.g. Stripe)
-- [ ] Your app must send transactional emails (eg. using Mailgun).
-- [ ] Your app should have an internal user messaging system.
 - [x] Your app will have some type of searching, sorting and/or filtering capability.
 - [x] Your app will have some type of file uploading capability (eg. images).
 - [x] Your app will have authentication (eg. Devise, must have full functionality in place).
 - [x] Your app will have authorisation (users have restrictions on what they can see and edit).
 - [x] Document your application with a README that explains how to setup, configure and use your application.
+
+--- NOT YET IMPLEMENTED
+- [ ] Your app must send transactional emails (eg. using Mailgun).
+- [ ] Your app should have an internal user messaging system.
+- [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..).
+
 
 
 
