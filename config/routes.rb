@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   get '/go' => 'home#go'
   get '/drive' => 'home#drive'
   get '/adverts' => 'availabilities#adverts'
-  resources :charges
+
+
+  # stripe routes
+  resources :charges, only: [:new, :create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
+
+
 
 end

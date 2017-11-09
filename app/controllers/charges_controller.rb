@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+	before_action :authenticate_user!
+
 	def new
 	end
 
@@ -15,7 +17,7 @@ def create
     :customer    => customer.id,
     :amount      => @amount,
     :description => 'Book this Availability',
-    :currency    => 'aud'
+    :currency    => 'AUD'
   )
 
 rescue Stripe::CardError => e
@@ -23,6 +25,10 @@ rescue Stripe::CardError => e
   redirect_to new_charge_path
 end
 
+redirect_to thanks_path
+
+def thanks
+end
 
 
 

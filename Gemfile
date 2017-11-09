@@ -21,6 +21,10 @@ gem "shrine-cloudinary"
 # Stripe for payment processing
 gem 'stripe'
 
+#  Omni auth gem for stripe connect so drivers can get paid
+gem 'omniauth-stripe-connect'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

@@ -1,5 +1,6 @@
 class AvailabilitiesController < ApplicationController
   before_action :set_availability, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /availabilities
   # GET /availabilities.json
