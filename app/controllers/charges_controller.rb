@@ -20,13 +20,18 @@ def create
     :currency    => 'AUD'
   )
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
-end
+	redirect_to thanks_path
 
-redirect_to thanks_path
-end
 
-def thanks
+	rescue Stripe::CardError => e
+	  flash[:error] = e.message
+	  redirect_to new_charge_path
+	end
+
+
+	def thanks
+	end
+
+
+
 end
