@@ -131,7 +131,11 @@ Demonstrate your ability to break down the problem and design a solution.
 
 - 2 - User stories for the whole application.
 [Trello] (https://trello.com/b/hFWA21QZ/koalified)
+
+
 - 3 - A workflow diagram of the user journey/s.
+[Flow](/public/flow.png)
+Possible journeys at the moment, currently bookings redirects to "learn" - as implmentation is pending.
 
 
 - 4 - Wireframes for at least 5 screens.
@@ -143,7 +147,7 @@ Demonstrate your ability to break down the problem and design a solution.
 
 
 - 6 - Project plan and estimation.
-[plan)(/public/plan.pdf)
+[Summary](/public/Summary.pdf)
 
 
 
