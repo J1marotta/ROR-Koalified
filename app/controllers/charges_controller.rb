@@ -26,10 +26,7 @@ rescue Stripe::CardError => e
 end
 
 redirect_to thanks_path
-
-def thanks
 end
 
-
-
+def thanks
 end
