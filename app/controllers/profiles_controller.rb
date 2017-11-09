@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :new, :create]
+  before_action :set_profile, only: %i[show edit update destroy new create]
+  before_action :authenticate_user!
 
   # GET /profiles
   # GET /profiles.json
-  def index
-  end
+  def index; end
 
   # GET /profiles/1
   # GET /profiles/1.json
@@ -19,14 +19,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
-
-
   # POST /profiles
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
-
 
     respond_to do |format|
       if @profile.save
@@ -43,9 +40,7 @@ class ProfilesController < ApplicationController
   def edit
     # find the profile by the current user or create it if it doesn't exist... handy ruby built in function
     @profile = Profile.find_or_initialize_by(user: current_user)
-
   end
-
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
@@ -72,19 +67,20 @@ class ProfilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      if params[:id]
-        # If there are params it is not the curent user
-        @profile = Profile.find_by(user_id: params[:id])
-      else
-        # Must be the owner if no params
-        @profile = Profile.find_by(user: current_user)
-      end
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.require(:profile).permit(:name, :driving_history_check_data, :police_check, :bio, :car, :avatar, :user_id, :license)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = if params[:id]
+                 # If there are params it is not the curent user
+                 Profile.find_by(user_id: params[:id])
+               else
+                 # Must be the owner if no params
+                 Profile.find_by(user: current_user)
+               end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def profile_params
+    params.require(:profile).permit(:name, :driving_history_check_data, :police_check, :bio, :car, :avatar, :user_id, :license)
+  end
 end

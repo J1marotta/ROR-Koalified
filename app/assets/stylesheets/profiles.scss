@@ -4,6 +4,16 @@
 
 
 
+
+// text decoration minimizer for profile page
+
+.none {
+	text-decoration: none !important;
+	border-bottom: none;
+	color: #fff;
+}
+
+
 .avatar {
 	border-radius: 50%;
 	max-height: 10vh;

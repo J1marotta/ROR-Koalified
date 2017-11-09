@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-
   resources :bookings
-  devise_for :users , controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: 'registrations' }
   root to: 'home#index'
 
   resources :availabilities
 
   # resource for profiles this only allows the current user to get to a profile and edit, if you're not signed in you can only view
-  resources :user, only: [:show, :update], controller: :profiles
+  resources :user, only: %i[show update], controller: :profiles
   #  resource vs recourses singular allows for just one profile and we tie it to the user id,
   #  if you use resources it adds profile/id/ for multiple users
   resource :profile
@@ -16,6 +15,8 @@ Rails.application.routes.draw do
   get '/go' => 'home#go'
   get '/drive' => 'home#drive'
   get '/adverts' => 'availabilities#adverts'
-  resources :charges
 
+  # stripe routes
+  resources :charges, only: %i[new create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
 end

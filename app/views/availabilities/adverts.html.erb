@@ -24,63 +24,67 @@
 	<!-- start of results in css grid -->
 	<div class="grid">
 		<% @availabilities.each do |a| %>
-		<div class="spacer">
 
-		</div>
-		<!-- Each box -->
-		<div class="box">
+		<!-- if they availabilities isn't booked  -->
+		<% if !a.booked  %>
+			<div class="spacer"></div>
+			<!-- Each box -->
+			<div class="box">
 
-			<!-- has a name -->
+				<!-- has a name -->
 				DRIVER:
 				<%= a.user.profile.name %>
 
-
-			<!-- has a time spot -->
-			<div class="bit time">
-				TIME:
-				<%= a.day.to_date.strftime("%A, %b %d") %>
-				at:
-				<%= a.start_time.strftime(" %l %p")  %>
-			</div>
-
-			<!--section for profile  -->
-			<div class="bit profile">
-				<%= button_to "Profile" %>
-			</div>
-
-			<!-- bottom section has two buttons -->
-			<div class="bit ">
-
-				<!--send message   -->
-				<%= button_to "Send Message" %>
-
-				<!--Charge via stripe  -->
-				<div class="stripe">
-
-					<%= form_tag charges_path do %>
-					<article>
-						<% if flash[:error].present? %>
-						<div id="error_explanation">
-							<p><%= flash[:error] %></p>
-						</div>
-						<% end %>
-					</article>
-
-					<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="A month's subscription" data-amount="4500" data-locale="auto"></script>
-					<label class="amount">
-						<span>Amount: $45.00</span>
-					</label>
-					<% end %>
-
+				<!-- has a time spot -->
+				<div class="bit time">
+					TIME:
+					<%= a.day.to_date.strftime("%A, %b %d") %>
+					at:
+					<%= a.start_time.strftime(" %l %p")  %>
 				</div>
+
+				<!--section for profile  -->
+				<div class="bit profile">
+					<%= button_to "Profile" %>
+				</div>
+
+				<!-- bottom section has two buttons -->
+				<div class="bit ">
+
+					<!--send message   -->
+					<%= button_to "Send Message" %>
+
+					<!--Charge via stripe  -->
+					<div class="stripe">
+
+						<%= form_tag charges_path do %>
+						<article>
+							<% if flash[:error].present? %>
+							<div id="error_explanation">
+								<p><%= flash[:error] %></p>
+							</div>
+							<% end %>
+						</article>
+
+						<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Confirm this booking now."data-email="<%= current_user.email %>" data-amount="4500" data-email="<%= current_user.email %>" data-bitcoin="true" data-locale="auto"></script>
+						<label class="amount">
+							<span>Amount: $45.00</span>
+						</label>
+						<% end %>
+
+					</div>
+				</div>
+
 			</div>
+			<% else %>
+				<div class="box">
+					I'm sorry It doesn't seem like anyone is available now, you can invite people and gain credit to your account {fb invite now link }
+				</div>
+				<% end %>
 
-		</div>
+			<% end %>
 
-		<% end %>
-		<div class="spacer">
-
-		</div>
+			<!--if it is booked then just show a box with an i'm sorry   -->
 
 	</div>
 </div>

@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// colors for text section
+.white {
+	color: #fff !important;
+}
+
+
+
 //  CSS GRID WITH RIC
 .grid-top {
 	display: grid;
@@ -17,7 +24,11 @@
 .search-box ssbutton {
 	display:grid;
 	grid-template-columns: 1fr;
+	box-shadow: 5px 5px 2px #888888;
+
 }
+
+
 
 
 // container for display grid results
@@ -27,12 +38,12 @@
 	margin-left: 33px;
 	width: 85%;
 	grid-gap:20px;
-	grid-row-gap: 20px;
+	grid-row-gap: 40px;
 
 	// display as grid
 	display: grid;
 	// fractions of the container
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
 	padding:0px!important;
 	justify-content: center;
 }
@@ -50,6 +61,7 @@
 	padding-bottom : 10%;
 	grid-row-gap: 20px;
 	column-span: 1;
+	box-shadow: 5px 5px 2px #888888;
 }
 
 .spacer{

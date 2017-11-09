@@ -5,17 +5,17 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     @availability = availabilities(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get availabilities_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_availability_url
     assert_response :success
   end
 
-  test "should create availability" do
+  test 'should create availability' do
     assert_difference('Availability.count') do
       post availabilities_url, params: { availability: { booked: @availability.booked, day: @availability.day, length: @availability.length, price: @availability.price, user_id: @availability.user_id } }
     end
@@ -23,22 +23,22 @@ class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to availability_url(Availability.last)
   end
 
-  test "should show availability" do
+  test 'should show availability' do
     get availability_url(@availability)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_availability_url(@availability)
     assert_response :success
   end
 
-  test "should update availability" do
+  test 'should update availability' do
     patch availability_url(@availability), params: { availability: { booked: @availability.booked, day: @availability.day, length: @availability.length, price: @availability.price, user_id: @availability.user_id } }
     assert_redirected_to availability_url(@availability)
   end
 
-  test "should destroy availability" do
+  test 'should destroy availability' do
     assert_difference('Availability.count', -1) do
       delete availability_url(@availability)
     end
