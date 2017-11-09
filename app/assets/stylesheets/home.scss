@@ -3,24 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// big giant button
+.Giant-button {
+	min-width: 45vw;
+	min-height: 10vh;
+	border-radius: 10px !important;
+	font-size: 200% !important;
+}
 
-	.Giant-button {
-		min-width: 45vw;
-		min-height: 10vh;
-		border-radius: 10px !important;
-		font-size: 200% !important;
-	}
-
+// rounded edges
 .rounded {
 	border-radius: 15px;
 }
 
 
-
+// Colours
 .orange  {
 	background-color: #f46112 !important;
 }
-
 
 .charcoal {
 	background-color: #36454F !important;
@@ -28,4 +28,20 @@
 
 .green {
 	background-color: #21B2A6 !important;
+}
+
+.go-grid {
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	// border: 2px green solid;
+	justify-content: center;
+	align-content: center;
+}
+
+.go-box {
+	grid-column: 2/3;
+	grid-template-columns: 1fr;
+	display:grid;
+	// border: 2px red solid;
+
 }

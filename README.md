@@ -120,10 +120,20 @@ Demonstrate your ability to break down the problem and design a solution.
 
 
 - 2 - User stories for the whole application.
+[Trello] (https://trello.com/b/hFWA21QZ/koalified)
 - 3 - A workflow diagram of the user journey/s.
+
+
 - 4 - Wireframes for at least 5 screens.
+ I attempted to make high fidelity wireframes with figma, but I find it incredibly clumsy, and it seriously took me a full day to get these frames done, and I decided to stop and begin work on other aspects of the project.
+[Figma](https://www.figma.com/file/PsSKShufCQPDR3cvui8NlWDc/Koalified)
+
 - 5 - Entity Relationship Diagram (ERD).
+[Dbdesigner](/public/erd.png)
+
+
 - 6 - Project plan and estimation.
+[plan)(/public/plan.pdf)
 
 
 
@@ -167,6 +177,10 @@ Driver Posts Availability :
 
 Originally, I had used strings in the database for the the days of the week, and I also had quite a bit of problems, organising the information inside the database; I had my data stored as UTC, which took me a full day to convert to local time.  This was infuriating and the time would have been much better spend learning how to incorporate a JS date and time picker. My lack of JS skills definitely manifested in this scenario. What should have been a quite simple and easily Implemented widget.
 
+
+Eventually I made this work, By making availabilities only created by the current user, rendered when posting new availabilities, and all availabilities posted when searching for a booking.
+
+The next step is to trigger the booking boolean once the booking is confirmed and paid. and to remove it from the adverts view.
 ---
 
 
@@ -184,14 +198,14 @@ Demonstrate Ruby on Rails development skills.
 - [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..).
 - [x] Use appropriate gems.
 - [X] Use environmental variables to protect API keys etc. (dotenv used)
-- [ ] Implement a payment system for your product. (e.g. Stripe)
+- [x] Implement a payment system for your product. (e.g. Stripe)
 - [ ] Your app must send transactional emails (eg. using Mailgun).
 - [ ] Your app should have an internal user messaging system.
-- [ ] Your app will have some type of searching, sorting and/or filtering capability.
-- [ ] Your app will have some type of file uploading capability (eg. images).
+- [x] Your app will have some type of searching, sorting and/or filtering capability.
+- [x] Your app will have some type of file uploading capability (eg. images).
 - [x] Your app will have authentication (eg. Devise, must have full functionality in place).
 - [x] Your app will have authorisation (users have restrictions on what they can see and edit).
-- [ ] Document your application with a README that explains how to setup, configure and use your application.
+- [x] Document your application with a README that explains how to setup, configure and use your application.
 
 
 
