@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '~> 2.4.1'
+
 
 # user authentication, devise
 gem 'devise'
@@ -55,13 +55,17 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 2.5'
   gem 'dotenv-rails'
   gem 'selenium-webdriver'
   # rspec
   gem 'rspec-rails', '~> 3.6'
   # rubocop
   gem 'rubocop', '~> 0.51.0', require: false
+
+  # factory girl for creating test objects
+  gem 'factory_girl_rails', '~> 4.5.0'
+
 end
 
 group :development do
@@ -71,6 +75,17 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+
+group :test do
+  # additional gems to help with rspec  from this https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  # faker generates random data
+  gem 'faker', '~> 1.6.1'
+  # coverage to check how your much you are testing
+  gem 'simplecov', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
