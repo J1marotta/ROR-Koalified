@@ -82,22 +82,11 @@ ruby version : ruby 2.4.1p111
 
 
 
-## Running the tests
 
-
-
-
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### Coding Style Tests
 
+RuboCop was used, for formating and enforcing Style.
 
 To run rubocop
 
@@ -110,20 +99,23 @@ it inherits from .rubocop_todo.yml and you can adjust the test slightly in there
 
 
 ## Deployment
+To Deploy you will need your own STRIPE_KEY and SECRET_KEY, which I've stored as environment variables.
 
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
 * [html5up.net](http://www.html5up.net) - Great place for templates
 * [RailsGuides](http://guides.rubyonrails.org/) - the place for rails info
-
+* [Heroku](https://www.heroku.com/) - Premier Deployment resource.
 
 
 
 #Deliverables
 Design Documentation
 Demonstrate your ability to break down the problem and design a solution.
+
+
+- [Presentation](Presentation) 
 
 - 1 - One page summary of your application including problem definition, solution.
 * [Summary](https://docs.google.com/document/d/10j4bntSu_TVMSw3nLQZBkIEi8htvdvMnLu4BPICFaNM/edit?usp=sharing)
@@ -134,8 +126,9 @@ Demonstrate your ability to break down the problem and design a solution.
 
 
 - 3 - A workflow diagram of the user journey/s.
-[Flow](/public/flow.png)
-Possible journeys at the moment, currently bookings redirects to "learn" - as implmentation is pending.
+[Flow](/public/flow.png).
+
+Possible journeys at the moment, currently bookings redirects to "learn" - as implementation is pending.
 
 
 - 4 - Wireframes for at least 5 screens.
@@ -143,7 +136,7 @@ Possible journeys at the moment, currently bookings redirects to "learn" - as im
 [Figma](https://www.figma.com/file/PsSKShufCQPDR3cvui8NlWDc/Koalified)
 
 - 5 - Entity Relationship Diagram (ERD).
-[Dbdesigner](/public/erd.png)
+![Dbdesigner](/public/erd.png)
 
 
 - 6 - Project plan and estimation.
@@ -199,16 +192,26 @@ The next step is to trigger the booking boolean once the booking is confirmed an
 
 
 
+##### Key concept I know I want to include
+STRIPE Payment for Drivers
+
+I almost always prefer PayPal personally when it's an option because I know it's safe and secure; but Stripe is an excellent platform
+And I managed to have a price and checkout function, there is unfortunately no receipts no transactional history or tracking, and most importantly the Drivers are not connected to the site; meaning they never have the opportunity to get paid.
+
+	STATUS : Failed to integrate
+
+###### _Lessons learned_
+I tried several different tutorials online on how to integrate STRIPE Connect, but unfortunately I was not successful. My main problems were when I tried to integrate the Users as merchants.
+Along with not getting this implemented means that there is really no two-sided market at all, and it is fact just a shop.
 
 
 
-
-Rails application code
+### Rails application code
 Demonstrate Ruby on Rails development skills.
 
 - [x] Create your application using Ruby on Rails.
-- [x]  Demonstrate knowledge of Rails conventions.
-- [x]  Use postgresql database in development.
+- [x] Demonstrate knowledge of Rails conventions.
+- [x] Use postgresql database in development.
 - [x] Use appropriate gems.
 - [X] Use environmental variables to protect API keys etc. (dotenv used)
 - [x] Implement a payment system for your product. (e.g. Stripe)
@@ -218,11 +221,24 @@ Demonstrate Ruby on Rails development skills.
 - [x] Your app will have authorisation (users have restrictions on what they can see and edit).
 - [x] Document your application with a README that explains how to setup, configure and use your application.
 
---- NOT YET IMPLEMENTED
+--- YET TO BE IMPLEMENTED
 - [ ] Your app must send transactional emails (eg. using Mailgun).
 - [ ] Your app should have an internal user messaging system.
-- [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..).
+- [ ] Use an API (eg. Omniauth, Geocoding, Maps, other..)
 
+
+
+#####  OUTCOMES SUMMARY
+	I personally feel this was a failure overall for a two week sprint, losing two days to idea creation and another two days to a wedding, over the friday saturday. I missed almost all the major targets. testing on deployment also revealed several more problems
+
+
+	STATUS : Failure Overall
+
+###### _Lessons learned_
+ 	Time management, expectation vs reality is a big factor here, the idea behind using a template actually cost me time.
+
+
+### TESTS - I have zero effective test coverage, which immediately disqualifies this app from being useful.
 
 
 
@@ -232,9 +248,8 @@ Demonstrate Ruby on Rails development skills.
 
 ## Authors
 
-* **James Marotta** - *Initial work* - [j1marotta](https://github.com/j1marotta)
+* **James Marotta** - [j1marotta](https://github.com/j1marotta)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## Acknowledgments
 
@@ -242,11 +257,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 	This is a great resource, and I've included their readme inside the files as html5upreadme.md
 	[html5up.net](https://html5up.net/)
 	I can Acknowledge my weaknesses, and design is definitely one of them, using a template allows for quick proof of concept and faster prototyping.
-
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
 
 
 ## License
