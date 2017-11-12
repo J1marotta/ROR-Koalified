@@ -115,7 +115,7 @@ Design Documentation
 Demonstrate your ability to break down the problem and design a solution.
 
 
-- [Presentation](Presentation) 
+- [Presentation](Presentation)
 
 - 1 - One page summary of your application including problem definition, solution.
 * [Summary](https://docs.google.com/document/d/10j4bntSu_TVMSw3nLQZBkIEi8htvdvMnLu4BPICFaNM/edit?usp=sharing)
@@ -125,8 +125,11 @@ Demonstrate your ability to break down the problem and design a solution.
 [Trello] (https://trello.com/b/hFWA21QZ/koalified)
 
 
-- 3 - A workflow diagram of the user journey/s.
-[Flow](/public/flow.png).
+- 3 - A workflow diagram of the user journeys.
+
+[Flow](/public/flow.png)
+
+[Flow2](/public/flow2.png)
 
 Possible journeys at the moment, currently bookings redirects to "learn" - as implementation is pending.
 
@@ -168,7 +171,7 @@ After a full 6 hours trying to integrate this as the templates are not designed 
 (For reference main.js was dependant on skel.js and it needed to be required inside the file.
 Additionally Font-awesome was being used, and it was erroring; This was solved with the font-awesome gem, Which I found very quickly compared to the several hours with the js errors )
 
-Additionally further into development; I found that this proved to be a mistake, as it did not include bootstrap, and my css skills are sub-par at best. While my landing page looks swish, the rest of my app looks progressively worse and worse.
+Additionally further into development; I found that this proved to be a mistake, as it did not include bootstrap, and my css skills are sub-par at best. While my landing page looks swish, the rest of my app looks more and more inconsistent.
 
 
 
@@ -188,6 +191,7 @@ Originally, I had used strings in the database for the the days of the week, and
 Eventually I made this work, By making availabilities only created by the current user, rendered when posting new availabilities, and all availabilities posted when searching for a booking.
 
 The next step is to trigger the booking boolean once the booking is confirmed and paid. and to remove it from the adverts view.
+
 ---
 
 
@@ -202,7 +206,7 @@ And I managed to have a price and checkout function, there is unfortunately no r
 
 ###### _Lessons learned_
 I tried several different tutorials online on how to integrate STRIPE Connect, but unfortunately I was not successful. My main problems were when I tried to integrate the Users as merchants.
-Along with not getting this implemented means that there is really no two-sided market at all, and it is fact just a shop.
+I didn't correctly set up the tables to handle the data, and ran into compounding issues.
 
 
 
@@ -229,16 +233,15 @@ Demonstrate Ruby on Rails development skills.
 
 
 #####  OUTCOMES SUMMARY
-	I personally feel this was a failure overall for a two week sprint, losing two days to idea creation and another two days to a wedding, over the friday saturday. I missed almost all the major targets. testing on deployment also revealed several more problems
+	This was a hugely humbling experience for me; I was naive about how much time everything would take to implement, and My time management skills needed huge improvements.  
 
-
-	STATUS : Failure Overall
 
 ###### _Lessons learned_
- 	Time management, expectation vs reality is a big factor here, the idea behind using a template actually cost me time.
+ 	Time management, expectation vs reality is a big factor here, Using the template for example compounded time issues, when trying to style on top of the template css.
 
+	I spend hours trying to learn and implement a feature only to run into errors and have to start from scratch.
 
-### TESTS - I have zero effective test coverage, which immediately disqualifies this app from being useful.
+	I would also like to in the future have implemented much more testing from much earlier in the development cycle, trying to develop a TDD mentality.
 
 
 
