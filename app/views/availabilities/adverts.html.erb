@@ -45,7 +45,9 @@
 
 				<!--section for profile  -->
 				<div class="bit profile">
-					<%= button_to "Profile" %>
+
+					<!--ROUTES ERROR  /profile doesn't take params properly. -->
+					<%= button_to "Profile", user_path(a.user_id) %>
 				</div>
 
 				<!-- bottom section has two buttons -->
